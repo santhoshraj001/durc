@@ -1,0 +1,55 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="/update/{{ employee.id }}">
+        {% csrf_token %}
+        <div>
+            <br>
+            <p>
+                <h3>update details</h3>
+            </p>
+        </div>
+        <div>
+            <p>employee id:</p>
+            <div>
+                <input type="text" name="eid" value="{{employee.eid}}"/>
+            </div>
+            
+
+        </div>
+        <div>
+            <p>employee name:</p>
+            <div>
+                <input type="text" name="ename" value="{{employee.ename}}"/>
+            </div>
+
+        </div>
+        <div>
+            <p>employee email:</p>
+            <div>
+                <input type="email" name="eemail" value="{{employee.email}}"/>
+            </div>
+
+        </div>
+        <div>
+            <p>employee contact:</p>
+            <div>
+                <input type="text" name="econtact" value="{{employee.econtact}}"/>
+            </div>
+            <div>
+                <button type="submit">update</button>
+            
+            </div>
+
+        
+
+        </div>
+    </form>
+
+    
+</body>
+</html>

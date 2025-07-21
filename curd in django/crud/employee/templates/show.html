@@ -1,0 +1,39 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    <title>Employee record</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Employee id</th>
+                <th>Employee name</th>
+                <th>Employee email</th>
+                <th>Employee contact</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+            <tr>
+                <td>{{ employee.eid }}</td>
+                <td>{{ employee.ename }}</td>
+                <td>{{ employee.eemail }}</td>
+                <td>{{ employee.econtact }}</td>
+                <td>
+                    <a href="/edit/{{ employee.id }}">Edit</a>
+                    <a href="/delete/{{employee.id}}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+           
+    </table>
+    <br>
+    <br>
+    <button><a href="/emp">Add new record</a></button>
+    
+</body>
+</html>
